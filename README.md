@@ -28,6 +28,7 @@ Xperience by Kentico 28.4.1
 
 1. Install all dependencies (above 👆)
 1. Clone the repository
+1. Restore the SQL database backup in `~/database`
 1. Run the .NET project using the .NET CLI or included [VS Code task](https://code.visualstudio.com/docs/editor/tasks) (`dotnet: watch DancingGoat`)
 1. Run the Webpack dev server using `npm start` in the `~/DancingGoat.Admin/Client` folder or included VS Code task (`npm: start - src/DancingGoat.Admin/Client`)
 1. Open Xperience admin <http://localhost:28016/admin> and try modeling with the custom data types

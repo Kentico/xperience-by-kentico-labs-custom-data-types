@@ -20,8 +20,6 @@ Xperience by Kentico 28.4.1
 
 ### Dependencies
 
----These are all the dependencies required to use (not build) the library---
-
 - [ASP.NET Core 8.0](https://dotnet.microsoft.com/en-us/download)
 - [Node.js LTS](https://nodejs.org/en/download)
 - [Xperience by Kentico](https://docs.kentico.com/changelog)
@@ -32,7 +30,9 @@ Xperience by Kentico 28.4.1
 1. Clone the repository
 1. Run the .NET project using the .NET CLI or included [VS Code task](https://code.visualstudio.com/docs/editor/tasks) (`dotnet: watch DancingGoat`)
 1. Run the Webpack dev server using `npm start` in the `~/DancingGoat.Admin/Client` folder or included VS Code task (`npm: start - src/DancingGoat.Admin/Client`)
-1. Open Xperience admin <http://localhost:28016/admin> and try modeling with the custom data types (username: administrator, password: Pass@12345)
+1. Open Xperience admin <http://localhost:28016/admin> and try modeling with the custom data types
+   - username: administrator
+   - password: Pass@12345
 
 ## Usage Guide
 

@@ -14,7 +14,7 @@ A Dancing Goat example of custom Address and Link data types which can be used t
 
 ![Coffee content item](./images/coffee-content-item-with-links-form.png)
 
-## Library Version Matrix
+## Project version support
 
 Xperience by Kentico 28.4.1
 

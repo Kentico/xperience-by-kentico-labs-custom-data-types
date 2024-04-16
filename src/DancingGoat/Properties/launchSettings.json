@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "DancingGoat": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:28016",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_WATCH_RESTART_ON_RUDE_EDIT": "true"
+      }
+    }
+  }
+}
+

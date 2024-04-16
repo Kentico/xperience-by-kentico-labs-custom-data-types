@@ -24,24 +24,9 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <WarningsAsErrors>nullable</WarningsAsErrors>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <CopyDocumentationFilesFromPackages>true</CopyDocumentationFilesFromPackages>
-    <CopyDebugSymbolFilesFromPackages>true</CopyDebugSymbolFilesFromPackages>
-    <NoWarn>$(NoWarn);1591</NoWarn>
-    <RootNamespace>Kentico.Xperience.RepoTemplate</RootNamespace>
-
-    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-    <TimestampServerUrl>http://timestamp.digicert.com</TimestampServerUrl>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" $(Configuration) == 'Release' ">
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Nullable>annotations</Nullable>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <NoWarn>$(NoWarn);CS8669</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Label="StaticCodeAnalysis">

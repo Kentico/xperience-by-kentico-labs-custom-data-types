@@ -4,10 +4,10 @@
     {
       "type": "npm",
       "script": "install",
-      "path": "src/Kentico.Xperience.RepoTemplate/Admin/Client",
-      "group": "clean",
+      "path": "src/DancingGoat.Admin/Client",
+      "group": "build",
       "problemMatcher": [],
-      "label": "npm: install - src/Kentico.Xperience.RepoTemplate/Admin/Client",
+      "label": "npm: install - src/DancingGoat.Admin/Client",
       "detail": "install dependencies from package"
     },
     {
@@ -18,48 +18,40 @@
       "label": "dotnet: build"
     },
     {
-      "type": "shell",
-      "command": "dotnet",
-      "args": ["format"],
-      "problemMatcher": ["$msCompile"],
-      "group": "none",
-      "options": {
-        "cwd": "${workspaceFolder}/src/Kentico.Xperience.RepoTemplate/"
-      },
-      "label": "dotnet: format"
-    },
-    {
       "type": "dotnet",
       "task": "clean",
       "problemMatcher": ["$msCompile"],
-      "group": "clean",
+      "group": "build",
       "label": "dotnet: clean"
     },
     {
       "type": "npm",
       "script": "build",
-      "path": "src/Kentico.Xperience.RepoTemplate/Admin/Client",
+      "path": "src/DancingGoat.Admin/Client",
       "group": "build",
       "problemMatcher": [],
-      "label": "npm: build - src/Kentico.Xperience.RepoTemplate/Admin/Client",
-      "detail": "webpack --mode=production"
+      "label": "npm: build - src/DancingGoat.Admin/Client",
+      "detail": "webpack --mode=production",
+      "dependsOn": ["npm: install - src/DancingGoat.Admin/Client"]
     },
     {
       "type": "npm",
       "script": "build:dev",
-      "path": "src/Kentico.Xperience.RepoTemplate/Admin/Client",
+      "path": "src/DancingGoat.Admin/Client",
       "group": "build",
       "problemMatcher": [],
-      "label": "npm: build:dev - src/Kentico.Xperience.RepoTemplate/Admin/Client",
-      "detail": "webpack --mode=development"
+      "label": "npm: build:dev - src/DancingGoat.Admin/Client",
+      "detail": "webpack --mode=development",
+      "dependsOn": ["npm: install - src/DancingGoat.Admin/Client"]
     },
     {
       "type": "npm",
       "script": "start",
-      "path": "src/Kentico.Xperience.RepoTemplate/Admin/Client",
+      "path": "src/DancingGoat.Admin/Client",
       "problemMatcher": [],
-      "label": "npm: start - src/Kentico.Xperience.RepoTemplate/Admin/Client",
-      "detail": "webpack serve --mode development"
+      "label": "npm: start - src/DancingGoat.Admin/Client",
+      "detail": "webpack serve --mode development",
+      "dependsOn": ["npm: install - src/DancingGoat.Admin/Client"]
     },
     {
       "label": "dotnet: watch DancingGoat",
@@ -69,7 +61,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/src/Kentico.Xperience.RepoTemplate.Sample/DancingGoat.csproj"
+        "${workspaceFolder}/src/DancingGoat/DancingGoat.csproj"
       ],
       "options": {
         "env": {

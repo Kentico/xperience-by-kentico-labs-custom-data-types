@@ -31,11 +31,9 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
 
-  "dotnet.defaultSolution": "Kentico.Xperience.RepoTemplate.sln",
+  "dotnet.defaultSolution": "DancingGoat.sln",
 
-  "eslint.workingDirectories": [
-    "./src/Kentico.Xperience.RepoTemplate/Admin/Client"
-  ],
+  "eslint.workingDirectories": ["./src/DancingGoat.Admin/Admin/Client"],
 
   "files.associations": {
     ".azuredevops/**/*.yml": "azure-pipelines"

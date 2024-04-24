@@ -97,7 +97,7 @@ public class AddressListFormComponent : FormComponent<
 {
     public const string IDENTIFIER = "DancingGoat.FormComponent.AddressListDataType";
 
-    public override string ClientComponentName => "@acme/web-admin/AddressList";
+    public override string ClientComponentName => "@acme/web-admin/AddressDataTypeList";
 }
 
 public class AddressListFormComponentProperties : FormComponentProperties { }

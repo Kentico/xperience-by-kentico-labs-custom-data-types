@@ -7,13 +7,13 @@ import {
 import React, { ChangeEvent, useState } from "react";
 import { AddressDataType, newAddress } from "./AddressDataType";
 
-interface AddressListFormComponentProps extends FormComponentProps {
+interface AddressDataTypeListFormComponentProps extends FormComponentProps {
   newAddress: AddressDataType;
   value: AddressDataType[];
 }
 
 export const AddressListFormComponent = (
-  props: AddressListFormComponentProps
+  props: AddressDataTypeListFormComponentProps
 ) => {
   const [addresses, setAddresses] = useState(
     props.value ?? [{ ...props.newAddress }]

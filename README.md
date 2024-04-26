@@ -6,6 +6,8 @@
 
 A Dancing Goat example of custom Address and Link data types which can be used to model owned/embedded content of a content item (web page, reusable, headless, email) as serialized JSON and strongly typed C# content type model classes.
 
+Read the Kentico Community Portal blog post - [Embedded structured content and the power of custom data types](https://community.kentico.com/blog/embedded-structured-content-and-the-power-of-custom-data-types).
+
 ## Screenshots
 
 ![Cafe content type](./images/cafe-content-type-with-address-data-type.png)

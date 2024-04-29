@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using CMS.ContentEngine;
+using DancingGoat;
 
 namespace DancingGoat.Models
 {
@@ -50,5 +51,11 @@ namespace DancingGoat.Models
 		/// BannerText.
 		/// </summary>
 		public string BannerText { get; set; }
+
+
+		/// <summary>
+		/// BannerLink.
+		/// </summary>
+		public LinkDataType? BannerLink { get; set; }
 	}
 }

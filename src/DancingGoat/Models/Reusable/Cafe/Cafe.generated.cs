@@ -66,8 +66,8 @@ namespace DancingGoat.Models
 
 
 		/// <summary>
-		/// CafeAddress.
+		/// CafeAddresses.
 		/// </summary>
-		public AddressDataType? CafeAddress { get; set; }
+		public IEnumerable<AddressDataType> CafeAddresses { get; set; }
 	}
 }

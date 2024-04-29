@@ -50,7 +50,7 @@ public static class LinkDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "{ }",
                 DefaultValue = new(),
-                HasConfigurableDefaultValue = false,
+                HasConfigurableDefaultValue = true,
             });
 
         DataTypeCodeGenerationManager.RegisterDataTypeCodeGenerator(

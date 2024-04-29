@@ -1,4 +1,9 @@
-﻿using DancingGoat.Admin;
+﻿using System.Globalization;
+
+using CMS.Core;
+using CMS.DataEngine.Internal;
+
+using DancingGoat.Admin;
 
 using Kentico.Xperience.Admin.Base;
 
@@ -17,6 +22,19 @@ namespace DancingGoat.Admin
         public AcmeWebAdminModule()
             : base("Acme.Web.Admin")
         {
+        }
+
+        protected override void OnPreInit(ModulePreInitParameters parameters)
+        {
+            base.OnPreInit(parameters);
+
+            AddressDataTypeRegister.Register();
+            LinkDataTypeRegister.Register();
+
+            RegisterDefaultValueComponent(LinkDataType.FIELD_TYPE,
+                LinkFormComponent.IDENTIFIER,
+                (val) => val is LinkDataType link ? JsonDataTypeConverter.ConvertToString(link, new(), CultureInfo.CurrentCulture).ToString() ?? "" : "",
+                (val) => JsonDataTypeConverter.ConvertToModel<LinkDataType>(val, new(), CultureInfo.CurrentCulture));
         }
 
         protected override void OnInit()

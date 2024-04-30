@@ -18,7 +18,7 @@ Read the Kentico Community Portal blog post - [Embedded structured content and t
 
 ## Project version support
 
-Xperience by Kentico 28.4.1
+Xperience by Kentico 29.0.1
 
 ### Dependencies
 

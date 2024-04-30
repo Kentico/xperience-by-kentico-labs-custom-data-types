@@ -10,8 +10,14 @@ using DancingGoat;
 using Kentico.Xperience.Admin.Base.FormAnnotations;
 using Kentico.Xperience.Admin.Base.Forms;
 
-[assembly: RegisterFormComponent(AddressListFormComponent.IDENTIFIER, typeof(AddressListFormComponent), "Address List")]
-[assembly: RegisterFormComponent(AddressFormComponent.IDENTIFIER, typeof(AddressFormComponent), "Address")]
+[assembly: RegisterFormComponent(
+    AddressListFormComponent.IDENTIFIER,
+    typeof(AddressListFormComponent),
+    "Address List")]
+[assembly: RegisterFormComponent(
+    AddressFormComponent.IDENTIFIER,
+    typeof(AddressFormComponent),
+    "Address")]
 
 namespace DancingGoat;
 
@@ -34,7 +40,7 @@ public static class AddressDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "[]",
                 DefaultValue = [],
-                HasConfigurableDefaultValue = false,
+                HasConfigurableDefaultValue = true,
             });
 
         DataTypeManager.RegisterDataTypes(
@@ -52,13 +58,13 @@ public static class AddressDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "{ }",
                 DefaultValue = new(),
-                HasConfigurableDefaultValue = false,
+                HasConfigurableDefaultValue = true,
             });
 
         DataTypeCodeGenerationManager.RegisterDataTypeCodeGenerator(
             AddressDataType.FIELD_TYPE,
             () => new DataTypeCodeGenerator(
-                field => field.AllowEmpty ? "AddressDataType?" : "AddressDataType",
+                field => "AddressDataType",
                 field => nameof(ValidationHelper.GetString),
                 field => "new()",
                 field => ["DancingGoat"]));

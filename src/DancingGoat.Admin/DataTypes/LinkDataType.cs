@@ -10,8 +10,14 @@ using DancingGoat;
 using Kentico.Xperience.Admin.Base.FormAnnotations;
 using Kentico.Xperience.Admin.Base.Forms;
 
-[assembly: RegisterFormComponent(LinkListFormComponent.IDENTIFIER, typeof(LinkListFormComponent), "Link List")]
-[assembly: RegisterFormComponent(LinkFormComponent.IDENTIFIER, typeof(LinkFormComponent), "Link")]
+[assembly: RegisterFormComponent(
+    LinkListFormComponent.IDENTIFIER,
+    typeof(LinkListFormComponent),
+    "Link List")]
+[assembly: RegisterFormComponent(
+    LinkFormComponent.IDENTIFIER,
+    typeof(LinkFormComponent),
+    "Link")]
 
 namespace DancingGoat;
 
@@ -50,13 +56,13 @@ public static class LinkDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "{ }",
                 DefaultValue = new(),
-                HasConfigurableDefaultValue = false,
+                HasConfigurableDefaultValue = true,
             });
 
         DataTypeCodeGenerationManager.RegisterDataTypeCodeGenerator(
             LinkDataType.FIELD_TYPE,
             () => new DataTypeCodeGenerator(
-                field => field.AllowEmpty ? "LinkDataType?" : "LinkDataType",
+                field => "LinkDataType",
                 field => nameof(ValidationHelper.GetString),
                 field => "new()",
                 field => ["DancingGoat"]));
@@ -74,8 +80,8 @@ public static class LinkDataTypeRegister
 
 public class LinkDataType
 {
-    public const string FIELD_TYPE = "Link";
-    public const string FIELD_TYPE_LIST = "Linklist";
+    public const string FIELD_TYPE = "link";
+    public const string FIELD_TYPE_LIST = "linklist";
 
     public Guid ID { get; set; } = Guid.NewGuid();
     public string Label { get; set; } = "";

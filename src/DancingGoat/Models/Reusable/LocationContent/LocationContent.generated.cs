@@ -44,6 +44,6 @@ namespace DancingGoat.Models
 		/// <summary>
 		/// LocationContentAddressJSON.
 		/// </summary>
-		public AddressDataType? LocationContentAddressJSON { get; set; }
+		public AddressDataType LocationContentAddressJSON { get; set; }
 	}
 }

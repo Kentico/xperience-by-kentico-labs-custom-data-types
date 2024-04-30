@@ -11,3 +11,19 @@ export function newLink(): LinkDataType {
     url: "",
   };
 }
+
+export type LinkDataTypeField = Exclude<keyof LinkDataType, "id">;
+
+export const LinkDataTypeFields: {
+  value: LinkDataTypeField;
+  text: string;
+}[] = [
+  {
+    value: "label",
+    text: "Label",
+  },
+  {
+    value: "url",
+    text: "URL",
+  },
+];

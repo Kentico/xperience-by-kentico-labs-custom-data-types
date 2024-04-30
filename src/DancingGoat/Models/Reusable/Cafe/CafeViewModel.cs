@@ -15,11 +15,11 @@ namespace DancingGoat.Models
                 cafe.CafeName,
                 cafePhoto?.ImageFile.Url,
                 cafePhoto?.ImageShortDescription,
-                cafe.CafeAddress?.Street,
-                cafe.CafeAddress?.City,
-                cafe.CafeAddress?.Country,
-                cafe.CafeAddress?.PostalCode,
-                cafe.CafeAddress?.Phone);
+                cafe.CafeAddresses.FirstOrDefault()?.Street,
+                cafe.CafeAddresses.FirstOrDefault()?.City,
+                cafe.CafeAddresses.FirstOrDefault()?.Country,
+                cafe.CafeAddresses.FirstOrDefault()?.PostalCode,
+                cafe.CafeAddresses.FirstOrDefault()?.Phone);
         }
     }
 }

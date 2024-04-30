@@ -5,7 +5,7 @@ import {
   ButtonColor,
 } from "@kentico/xperience-admin-components";
 import React, { ChangeEvent, useState } from "react";
-import { LinkDataType, newLink } from "./LinkDataType";
+import { LinkDataType, LinkDataTypeFields, newLink } from "./LinkDataType";
 
 interface LinkListDataTypeFormComponentProps extends FormComponentProps {
   newLink: LinkDataType;
@@ -52,8 +52,6 @@ export const LinkListDataTypeFormComponent = (
     }
   };
 
-  const fieldStyle = { marginTop: ".5rem" };
-
   return (
     <div>
       <label style={{ color: "var(--color-text-default-on-light)" }}>
@@ -69,7 +67,7 @@ export const LinkListDataTypeFormComponent = (
         >
           <div
             style={{
-              ...fieldStyle,
+              marginTop: ".5rem",
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
@@ -90,26 +88,21 @@ export const LinkListDataTypeFormComponent = (
               gap: "1rem",
             }}
           >
-            <div style={fieldStyle}>
-              <Input
-                label="Label"
-                name={`${index}-label`}
-                value={link.label}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="URL"
-                name={`${index}-url`}
-                value={link.url}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
+            {LinkDataTypeFields.map((f) => (
+              <div style={{ marginTop: ".5rem" }} key={f.value}>
+                <Input
+                  label={f.text}
+                  name={`${index}-${f.value}`}
+                  value={link[f.value]}
+                  onChange={(e) => handleFieldChange(index, e)}
+                  disabled={props.disabled}
+                />
+              </div>
+            ))}
           </div>
         </div>
       ))}
-      <div style={fieldStyle}>
+      <div style={{ marginTop: ".5rem" }}>
         <Button
           onClick={handleLinkAdd}
           label="Add Link"

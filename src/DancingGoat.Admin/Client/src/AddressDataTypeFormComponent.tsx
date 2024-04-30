@@ -50,6 +50,7 @@ export const AddressDataTypeFormComponent = (
               name={f.value}
               value={address[f.value]}
               onChange={handleFieldChange}
+              disabled={props.disabled}
             />
           </div>
         ))}

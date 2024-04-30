@@ -40,7 +40,7 @@ public static class LinkDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "[]",
                 DefaultValue = [],
-                HasConfigurableDefaultValue = true,
+                HasConfigurableDefaultValue = false,
             },
             new DataType<LinkDataType>(
                 sqlType: "nvarchar(max)",

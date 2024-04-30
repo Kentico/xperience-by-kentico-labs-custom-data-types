@@ -45,6 +45,7 @@ export const LinkDataTypeFormComponent = (
               name={f.value}
               value={link[f.value]}
               onChange={handleFieldChange}
+              disabled={props.disabled}
             />
           </div>
         ))}

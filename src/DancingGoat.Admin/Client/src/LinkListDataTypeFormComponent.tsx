@@ -95,6 +95,7 @@ export const LinkListDataTypeFormComponent = (
                   name={`${index}-${f.value}`}
                   value={link[f.value]}
                   onChange={(e) => handleFieldChange(index, e)}
+                  disabled={props.disabled}
                 />
               </div>
             ))}

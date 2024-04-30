@@ -16,7 +16,7 @@ interface AddressDataTypeListFormComponentProps extends FormComponentProps {
   value: AddressDataType[];
 }
 
-export const AddressListFormComponent = (
+export const AddressListDataTypeFormComponent = (
   props: AddressDataTypeListFormComponentProps
 ) => {
   const [addresses, setAddresses] = useState(
@@ -103,6 +103,7 @@ export const AddressListFormComponent = (
                   name={`${index}-${f.value}`}
                   value={address[f.value]}
                   onChange={(e) => handleFieldChange(index, e)}
+                  disabled={props.disabled}
                 />
               </div>
             ))}

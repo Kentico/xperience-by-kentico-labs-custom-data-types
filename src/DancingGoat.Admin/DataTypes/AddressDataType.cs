@@ -40,7 +40,7 @@ public static class AddressDataTypeRegister
                 DbType = SqlDbType.NVarChar,
                 DefaultValueCode = "[]",
                 DefaultValue = [],
-                HasConfigurableDefaultValue = true,
+                HasConfigurableDefaultValue = false,
             });
 
         DataTypeManager.RegisterDataTypes(
@@ -101,9 +101,9 @@ public class AddressListFormComponent : FormComponent<
     AddressListFormComponentClientProperties,
     IEnumerable<AddressDataType>>
 {
-    public const string IDENTIFIER = "DancingGoat.FormComponent.AddressListDataType";
+    public const string IDENTIFIER = "DancingGoat.FormComponent.AddressList";
 
-    public override string ClientComponentName => "@acme/web-admin/AddressDataTypeList";
+    public override string ClientComponentName => "@acme/web-admin/AddressListDataType";
 }
 
 public class AddressListFormComponentProperties : FormComponentProperties { }

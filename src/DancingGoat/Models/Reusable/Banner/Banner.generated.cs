@@ -56,6 +56,6 @@ namespace DancingGoat.Models
 		/// <summary>
 		/// BannerLink.
 		/// </summary>
-		public LinkDataType? BannerLink { get; set; }
+		public LinkDataType BannerLink { get; set; }
 	}
 }

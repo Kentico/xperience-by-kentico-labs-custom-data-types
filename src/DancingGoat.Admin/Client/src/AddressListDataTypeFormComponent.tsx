@@ -5,7 +5,11 @@ import {
   ButtonColor,
 } from "@kentico/xperience-admin-components";
 import React, { ChangeEvent, useState } from "react";
-import { AddressDataType, newAddress } from "./AddressDataType";
+import {
+  AddressDataType,
+  newAddress,
+  AddressDataTypeFields,
+} from "./AddressDataType";
 
 interface AddressDataTypeListFormComponentProps extends FormComponentProps {
   newAddress: AddressDataType;
@@ -56,8 +60,6 @@ export const AddressListFormComponent = (
     }
   };
 
-  const fieldStyle = { marginTop: ".5rem" };
-
   return (
     <div>
       <label style={{ color: "var(--color-text-default-on-light)" }}>
@@ -73,7 +75,7 @@ export const AddressListFormComponent = (
         >
           <div
             style={{
-              ...fieldStyle,
+              marginTop: ".5rem",
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
@@ -94,58 +96,20 @@ export const AddressListFormComponent = (
               gap: "1rem",
             }}
           >
-            <div style={fieldStyle}>
-              <Input
-                label="Street"
-                name={`${index}-street`}
-                value={address.street}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="City"
-                name={`${index}-city`}
-                value={address.city}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="State/Province"
-                name={`${index}-stateProvince`}
-                value={address.stateProvince}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="Postal Code"
-                name={`${index}-postalCode`}
-                value={address.postalCode}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="Country"
-                name={`${index}-country`}
-                value={address.country}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
-            <div style={fieldStyle}>
-              <Input
-                label="Phone"
-                name={`${index}-phone`}
-                value={address.phone}
-                onChange={(e) => handleFieldChange(index, e)}
-              />
-            </div>
+            {AddressDataTypeFields.map((f) => (
+              <div style={{ marginTop: ".5rem" }} key={f.value}>
+                <Input
+                  label={f.text}
+                  name={`${index}-${f.value}`}
+                  value={address[f.value]}
+                  onChange={(e) => handleFieldChange(index, e)}
+                />
+              </div>
+            ))}
           </div>
         </div>
       ))}
-      <div style={fieldStyle}>
+      <div style={{ marginTop: ".5rem" }}>
         <Button
           onClick={handleAddressAdd}
           label="Add Address"

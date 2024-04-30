@@ -19,3 +19,35 @@ export function newAddress(): AddressDataType {
     phone: "",
   };
 }
+
+export type AddressDataTypeField = Exclude<keyof AddressDataType, "id">;
+
+export const AddressDataTypeFields: {
+  value: AddressDataTypeField;
+  text: string;
+}[] = [
+  {
+    value: "street",
+    text: "Street",
+  },
+  {
+    value: "city",
+    text: "City",
+  },
+  {
+    value: "stateProvince",
+    text: "State or Province",
+  },
+  {
+    value: "postalCode",
+    text: "Postal Code",
+  },
+  {
+    value: "country",
+    text: "Country",
+  },
+  {
+    value: "phone",
+    text: "Phone",
+  },
+];

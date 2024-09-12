@@ -36,16 +36,6 @@
     },
     {
       "type": "npm",
-      "script": "build:dev",
-      "path": "src/DancingGoat.Admin/Client",
-      "group": "build",
-      "problemMatcher": [],
-      "label": "npm: build:dev - src/DancingGoat.Admin/Client",
-      "detail": "webpack --mode=development",
-      "dependsOn": ["npm: install - src/DancingGoat.Admin/Client"]
-    },
-    {
-      "type": "npm",
       "script": "start",
       "path": "src/DancingGoat.Admin/Client",
       "problemMatcher": [],
